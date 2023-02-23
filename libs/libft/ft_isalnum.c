@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/10/31 11:57:49 by lfrank            #+#    #+#             */
+/*   Updated: 2022/10/31 12:11:36 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The isalnum() function tests for any character for which isalpha(3) or
+isdigit(3) is true. */
 
-size_t	ft_strlen_width(char *string)
+int	ft_isalnum(int c)
 {
-	int	length;
-
-	length = 0;
-	if (!string)
+	if (ft_isalpha(c) || ft_isdigit(c))
+		return (1);
+	else
 		return (0);
-	while (*string != '\n')
-	{
-		length++;
-		string++;
-	}
-	return (length);
 }

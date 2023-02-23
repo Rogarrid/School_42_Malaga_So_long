@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/10/31 11:59:04 by lfrank            #+#    #+#             */
+/*   Updated: 2022/10/31 12:07:36 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The toupper() function converts a lower-case letter to the corresponding
+upper-case letter.  */
 
-size_t	ft_strlen_width(char *string)
+int	ft_toupper(int c)
 {
-	int	length;
-
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
+	if (c >= 'a' && c <= 'z')
 	{
-		length++;
-		string++;
+		c -= 32;
 	}
-	return (length);
+	return (c);
 }

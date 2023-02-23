@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map_2.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:21:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/16 10:21:54 by rocio            ###   ########.fr       */
+/*   Updated: 2023/02/23 13:45:17 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ int	ft_check_number_elements(int file_descriptor, t_game *game)
 {
 	char	*row_map;
 	int		counter;
-	int		start_position_number;
 	int		collec_number;
 	int		exit_and_position_number;
 
@@ -42,6 +41,7 @@ int	ft_check_number_elements(int file_descriptor, t_game *game)
 	if (exit_and_position_number != 2 || collec_number < 1)
 		return (0);
 	game->collectible_count = collec_number;
+	return (1);
 }
 
 //Abre el archivo para que pueda ser analizado por la función de arriba,
@@ -51,8 +51,9 @@ int	ft_open_map_check_elements(char *string, t_game *game)
 	int	file_descriptor;
 	int	elements;
 
+	elements = 0;
 	file_descriptor = open(string, O_RDONLY);
-	if (file_descriptor == -1)
+	if (file_descriptor != 1)
 		printf("Error apertura_5\n");
 	else
 		elements = ft_check_number_elements(file_descriptor, game);

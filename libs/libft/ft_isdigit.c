@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/10/31 11:58:03 by lfrank            #+#    #+#             */
+/*   Updated: 2022/10/31 12:07:24 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The isdigit() function tests for a decimal digit character. */
 
-size_t	ft_strlen_width(char *string)
+int	ft_isdigit(int c)
 {
-	int	length;
-
-	length = 0;
-	if (!string)
+	if (c >= '0' && c <= '9')
+		return (1);
+	else
 		return (0);
-	while (*string != '\n')
-	{
-		length++;
-		string++;
-	}
-	return (length);
 }

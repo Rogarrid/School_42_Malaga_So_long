@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 17:40:44 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/16 16:48:37 by rocio            ###   ########.fr       */
+/*   Updated: 2023/02/23 13:39:40 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ int	ft_check_size_map(char *string)
 	int	file_descriptor;
 	int	check_width;
 
+	check_width = 0;
 	file_descriptor = open(string, O_RDONLY);
 	if (file_descriptor == -1)
 		printf("Error apertura_3\n");

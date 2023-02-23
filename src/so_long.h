@@ -3,23 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   so_long.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/03 11:35:25 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/17 12:24:53 by rocio            ###   ########.fr       */
+/*   Updated: 2023/02/23 13:25:35 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
 
-# include "MLX42/include/MLX42/MLX42.h"
-# include <memory.h>
+# include "../MLX42/include/MLX42/MLX42.h"
+# include "../libs/libft/libft.h"
+# include "../libs/printf/ft_printf.h"
+# include "../libs/get_next_line/get_next_line.h"
+# include <fcntl.h>
 # include <stdlib.h>
+# include <stdio.h>
 # include <unistd.h>
-# include <stdio.h> //borrar todos los printf y esta liberia
-# include <fcntl.h> //open, read, etc
-//# include "../aux/libft/libft.h"
 
 # define BUFFER_SIZE 42
 # define TRUE 1
@@ -124,22 +125,22 @@ void				ft_print_message(t_game *game);
 void				ft_error_message(char *str, int error);
 
 //auxiliares
-size_t				ft_strlen(char *string);
-char				*get_next_line(int file_descriptor);
-char				*ft_print_line(char *save_line);
-char				*ft_clean_save(char *save_line);
-char				*ft_read_save_next_line(int fd, char *save_line);
-char				*ft_strjoin(char *str_1, char *str_2);
-char				*ft_strchr(char *string, int character);
-void				*ft_calloc(size_t number_items, size_t size);
-void				ft_bzero(void *directation_memory, size_t number_bytes);
-void				*ft_memset(void *string, int character, size_t number_bytes);
+//size_t				ft_strlen(char *string);
+//char				*get_next_line(int file_descriptor);
+//char				*ft_print_line(char *save_line);
+//char				*ft_clean_save(char *save_line);
+//char				*ft_read_save_next_line(int fd, char *save_line);
+//char				*ft_strjoin(char *str_1, char *str_2);
+//char				*ft_strchr(char *string, int character);
+//void				*ft_calloc(size_t number_items, size_t size);
+//void				ft_bzero(void *directation_memory, size_t number_bytes);
+//void				*ft_memset(void *string, int character, size_t number_bytes);
 
 //AUXILIARES PASAR A MI LIBFT !! //
-static void			ft_free_all(char **str_tab, int index);
-static int			ft_count_str(char const *string, char character);
-static char			*ft_set_one_substr(int *start, char const *str, char cha);
-static char			**ft_set_substr(char const *str, char cha, char **str_tab);
-char				**ft_split(char const *str, char character);
+//static void			ft_free_all(char **str_tab, int index);
+//static int			ft_count_str(char const *string, char character);
+//static char			*ft_set_one_substr(int *start, char const *str, char cha);
+//static char			**ft_set_substr(char const *str, char cha, char **str_tab);
+//char				**ft_split(char const *str, char character);
 
 #endif

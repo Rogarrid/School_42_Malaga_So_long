@@ -1,30 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_printchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/11/09 12:08:46 by lfrank            #+#    #+#             */
+/*   Updated: 2022/11/10 14:24:35 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-//*AUXILIARES*//
-
-size_t	ft_strlen_width(char *string)
+int	ft_printchar(char c)
 {
-	int	length;
-
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
-	{
-		length++;
-		string++;
-	}
-	return (length);
+	write(1, &c, 1);
+	return (1);
 }

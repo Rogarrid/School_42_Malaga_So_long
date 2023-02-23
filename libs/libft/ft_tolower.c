@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/10/31 11:59:02 by lfrank            #+#    #+#             */
+/*   Updated: 2022/10/31 12:07:38 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The tolower() function converts an upper-case letter to the corresponding
+lower-case letter. */
 
-size_t	ft_strlen_width(char *string)
+int	ft_tolower(int c)
 {
-	int	length;
-
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
+	if (c >= 'A' && c <= 'Z')
 	{
-		length++;
-		string++;
+		c += 32;
 	}
-	return (length);
+	return (c);
 }

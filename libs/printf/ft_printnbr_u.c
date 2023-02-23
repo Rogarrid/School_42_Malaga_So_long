@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_printnbr_u.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/11/09 16:00:11 by lfrank            #+#    #+#             */
+/*   Updated: 2022/11/10 19:31:51 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-//*AUXILIARES*//
-
-size_t	ft_strlen_width(char *string)
+int	ft_printnbr_u(unsigned int nb)
 {
-	int	length;
+	int	len;
 
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
+	len = 0;
+	if (nb > 9)
 	{
-		length++;
-		string++;
+		len += ft_printnbr_u(nb / 10);
+		len += ft_printnbr_u(nb % 10);
 	}
-	return (length);
+	else
+		len += ft_printchar(nb + 48);
+	return (len);
 }

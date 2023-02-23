@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/11/01 14:45:34 by lfrank            #+#    #+#             */
+/*   Updated: 2022/11/01 14:52:33 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The putstr_fd() function outputs the string ’s’ to 
+the given file descriptor. */
 
-size_t	ft_strlen_width(char *string)
+void	ft_putstr_fd(char *s, int fd)
 {
-	int	length;
+	int	i;
 
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
+	i = 0;
+	while (s[i] != '\0')
 	{
-		length++;
-		string++;
+		write(fd, &s[i], 1);
+		i++;
 	}
-	return (length);
 }

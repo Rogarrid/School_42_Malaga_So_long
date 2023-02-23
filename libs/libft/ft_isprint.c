@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/10/31 11:58:05 by lfrank            #+#    #+#             */
+/*   Updated: 2022/10/31 11:58:06 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The isprint() function tests for any printing character. */
 
-size_t	ft_strlen_width(char *string)
+int	ft_isprint(int c)
 {
-	int	length;
-
-	length = 0;
-	if (!string)
+	if (c >= 32 && c <= 126)
+		return (1);
+	else
 		return (0);
-	while (*string != '\n')
-	{
-		length++;
-		string++;
-	}
-	return (length);
 }

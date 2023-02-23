@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_printpointer.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/11/10 14:23:29 by lfrank            #+#    #+#             */
+/*   Updated: 2022/11/10 20:12:32 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "ft_printf.h"
 
-//*AUXILIARES*//
-
-size_t	ft_strlen_width(char *string)
+int	ft_printpointer(size_t ptr)
 {
-	int	length;
+	int	len;
 
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
-	{
-		length++;
-		string++;
-	}
-	return (length);
+	len = ft_digitlen(0, 'p');
+	len += ft_printstr("0x");
+	len += ft_printhex((unsigned long)ptr, 0);
+	return (len - 1);
 }

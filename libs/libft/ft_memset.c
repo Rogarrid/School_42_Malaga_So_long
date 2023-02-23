@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_memset.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/10/31 11:58:26 by lfrank            #+#    #+#             */
+/*   Updated: 2023/02/23 13:43:00 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The memset() function writes len bytes of value c (converted to an
+unsigned char) to the string b. */
 
-size_t	ft_strlen_width(char *string)
+void	*ft_memset(void *string, int character, size_t number_bytes)
 {
-	int	length;
+	size_t	position;
 
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
+	position = 0;
+	while (position < number_bytes)
 	{
-		length++;
-		string++;
+		*((unsigned char *) string + position) = character;
+		position++;
 	}
-	return (length);
+	return (string);
 }

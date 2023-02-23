@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   aux.c                                              :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/03 11:34:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:32:30 by rogarrid         ###   ########.fr       */
+/*   Created: 2022/11/02 18:27:47 by lfrank            #+#    #+#             */
+/*   Updated: 2022/11/03 19:12:18 by lfrank           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "libft.h"
 
-//*AUXILIARES*//
+/* The lstlast() function returns the last node of the list. */
 
-size_t	ft_strlen_width(char *string)
+t_list	*ft_lstlast(t_list *lst)
 {
-	int	length;
-
-	length = 0;
-	if (!string)
-		return (0);
-	while (*string != '\n')
+	while (lst != NULL)
 	{
-		length++;
-		string++;
+		if (lst->next == NULL)
+			return (lst);
+		lst = lst->next;
 	}
-	return (length);
+	return (lst);
 }
