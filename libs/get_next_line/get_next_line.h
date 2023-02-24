@@ -6,7 +6,7 @@
 /*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 10:49:22 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:49:13 by rogarrid         ###   ########.fr       */
+/*   Updated: 2023/02/24 11:58:20 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define GET_NEXT_LINE_H
 # include <unistd.h>
 # include <stdlib.h>
+# include "../libft/libft.h"
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
