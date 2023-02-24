@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_element_management.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 13:26:57 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/17 17:29:21 by rocio            ###   ########.fr       */
+/*   Updated: 2023/02/24 13:45:24 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 void	ft_save_elemets(t_game *game)
 {
 	game->elements.wall = ft_items_to_image(game->mlx,
-			"./elements/Tree-wall.xpm");
+			"./elements/Tree-wall.xpm42");
 	game->elements.floor = ft_items_to_image(game->mlx,
-			"./elements/floor.xpm");
+			"./elements/floor.xpm42");
 	game->elements.player = ft_items_to_image(game->mlx,
-			"./elements/player.xpm");
+			"./elements/perso.xpm42");
 	game->elements.collectible = ft_items_to_image(game->mlx,
-			"./elements/potion_collect.xpm");
+			"./elements/potion-collect.xpm42");
 	if (game->collectible_count == 0)
 		game->elements.exit = ft_items_to_image(game->mlx,
-				"./elements/door-exit.xpm");
+				"./elements/door-exit.xpm42");
 	else
 		game->elements.exit = ft_items_to_image(game->mlx,
-				"./elements/door-exit.xpm");
+				"./elements/door-exit.xpm42");
 }
 
 //libera la memoria asignada a los elementos usados anteriormente

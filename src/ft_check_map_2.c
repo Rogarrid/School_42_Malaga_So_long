@@ -6,7 +6,7 @@
 /*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/09 11:21:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:45:17 by rogarrid         ###   ########.fr       */
+/*   Updated: 2023/02/24 13:36:51 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	ft_open_map_check_elements(char *string, t_game *game)
 
 	elements = 0;
 	file_descriptor = open(string, O_RDONLY);
-	if (file_descriptor != 1)
+	if (file_descriptor == -1)
 		printf("Error apertura_5\n");
 	else
 		elements = ft_check_number_elements(file_descriptor, game);
@@ -66,14 +66,13 @@ int	ft_open_map_check_elements(char *string, t_game *game)
 int	ft_max_row(char	**map_2d)
 {
 	int		row;
-	t_game	game;
+	//t_game	game;
 
 	row = 0;
 	while (map_2d[row] != NULL)
 	{
 		row++;
 	}
-	game.rows = row;
 	row -= 1;
 	return (row);
 }
@@ -81,8 +80,9 @@ int	ft_max_row(char	**map_2d)
 //chequea si el mapa está rodeado por muro.
 int	ft_validate_wall(char **map_2d)
 {
-	int	row;
-	int	columns;
+	t_game	game;
+	int		row;
+	int		columns;
 
 	row = 0;
 	columns = 0;
@@ -102,8 +102,11 @@ int	ft_validate_wall(char **map_2d)
 				return (0);
 			columns++;
 		}
+		if (row < 1)
+			game.columns = columns;
 		row++;
 		columns = 0;
 	}
+	game.rows = row;
 	return (1);
 }

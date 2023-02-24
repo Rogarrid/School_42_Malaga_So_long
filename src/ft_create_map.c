@@ -6,7 +6,7 @@
 /*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/06 11:18:17 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/23 13:45:32 by rogarrid         ###   ########.fr       */
+/*   Updated: 2023/02/24 12:55:52 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char	*ft_read_map(char *map_path)
 	}
 	if (counter == 0)
 		printf("error archivo_2");
-	map = (char *)ft_calloc(sizeof(char), (counter + 1));
+	map = (char *)malloc((counter + 1) * sizeof(char));
 	if (!map)
 		printf("error malloc");
 	close(file_descriptor);

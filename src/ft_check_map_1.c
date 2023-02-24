@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map_1.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 10:27:36 by rocio             #+#    #+#             */
-/*   Updated: 2023/02/16 10:22:13 by rocio            ###   ########.fr       */
+/*   Updated: 2023/02/24 13:26:59 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,11 +85,9 @@ int	ft_check_width(int file_descriptor)
 	char	*row_read;
 	int		correct_rows;
 	size_t	size_row1;
-	t_game	game;
 
 	row_read = get_next_line(file_descriptor);
 	size_row1 = ft_strlen_width(row_read);
-	game.columns = size_row1;
 	correct_rows = 1;
 	free(row_read);
 	row_read = get_next_line(file_descriptor);
