@@ -2,21 +2,20 @@
 <div align="center" dir="auto">
 <a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/111855553/227193265-a180c94a-c537-4a9a-b4c1-f2756a2e09b1.png"><img width="830" alt="Game" src="https://user-images.githubusercontent.com/111855553/227193265-a180c94a-c537-4a9a-b4c1-f2756a2e09b1.png" style="max-width: 100%;"></a>
 </div>
-<h2 tabindex="-1" dir="auto"><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Table of Contents</h2>
+<h2 tabindex="-1" dir="auto"><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Índice de Contenido</h2>
 <ul dir="auto">
-<li><a href="#project-overview">Project Overview</a></li>
-<li><a href="#divide-and-conquer">Divide and Conquer</a></li>
-<li><a href="#bonus">Bonus</a></li>
-<li><a href="#result">Result</a></li>
-<li><a href="#tips-for-42-students">Tips for 42 students</a></li>
-<li><a href="#what-i-learned">What I learned</a></li>
+<li><a href="#Resumen del proyecto">Resumen del proyecto</a></li>
+<li><a href="#Vayamos por partes!">Vayamos por partes!</a></li>
+<li><a href="#Resultado">Resultado</a></li>
+<li><a href="#Trucos para realizar el proyecto">Trucos para realizar el proyecto</a></li>
+<li><a href="#¿Qué he aprendido?">¿Qué he aprendido?</a></li>
 </ul>
-<h2 tabindex="-1" dir="auto"><a id="user-content-project-overview" class="anchor" aria-hidden="true" href="#project-overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Project Overview</h2>
-<p dir="auto">This project is about coding a simple 2D game à la Pac-Man. The player’s goal is to collect every collectible present on the map, then escape choosing the shortest possible route.</p>
-<p dir="auto">My goals in coding the game is to get familiar with textures, sprites, and some other very basic gameplay elements (and get my nieces and nephews amused).
-I was free to choose a theme and I decided to let a squirrel collect some nuts in a parc.</p>
-<p dir="auto">For the graphic part of the project I used the library provided by 42 codam: <a href="https://github.com/codam-coding-college/MLX42">https://github.com/codam-coding-college/MLX42</a></p>
-<p dir="auto">The game can be played with different maps which are given as arguments to the program. The maps are difined in a <code>.ber</code>-file and have certain requirements to fulfill.</p>
+<h2 tabindex="-1" dir="auto"><a id="user-content-project-overview" class="anchor" aria-hidden="true" href="#project-overview"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Resumen del proyecto</h2>
+<p dir="auto">Este proyecto consiste en crear un juego 2D. El objetivo del jugador es recoger todos los objetos coleccionables del mapa, en mi caso pócimas y escapar.</p>
+<p dir="auto">La finalizar de este proyecto es sobre todo el familiarizarme con las texturas, los sprites y otros elementos muy básicos de la jugabilidad.
+Se tiene libertad para elegir un tema. En mi caso decidí ambientarlo en la edad media donde una aventurera tiene que ir recolectando pócimas.</p>
+<p dir="auto">Para la parte gráfica del proyecto utilicé la biblioteca proporcionada por 42 codam: <a href="https://github.com/codam-coding-college/MLX42">https://github.com/codam-coding-college/MLX42, aunque en el subject del proyecto pone que hay que usar la Minilibx, pero esta es más complicada de instalar.</a></p>
+<p dir="auto">El juego recibe los diferentes mapas por argumentos, y debe cumplir la condición de acabar en .ber</p>
 <h3 tabindex="-1" dir="auto"><a id="user-content-map-requirements" class="anchor" aria-hidden="true" href="#map-requirements"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Map Requirements</h3>
 <ul dir="auto">
 <li>The map has to be constructed with 3 components: walls, collectibles, and free space.</li>
