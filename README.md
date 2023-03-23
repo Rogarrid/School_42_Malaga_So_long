@@ -1,6 +1,6 @@
 <h1 tabindex="-1" dir="auto"><a id="user-content-so_long" class="anchor" aria-hidden="true" href="#so_long"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>so_long - Juego 2D</h1>
 <div align="center" dir="auto">
-<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/114035440/213333013-8745d1f6-42f9-41f8-9192-8cc0cd2e8d19.png"><img width="830" alt="Game" src="https://user-images.githubusercontent.com/114035440/213333013-8745d1f6-42f9-41f8-9192-8cc0cd2e8d19.png" style="max-width: 100%;"></a>
+<a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/111855553/227193265-a180c94a-c537-4a9a-b4c1-f2756a2e09b1.png"><img width="830" alt="Game" src="https://user-images.githubusercontent.com/111855553/227193265-a180c94a-c537-4a9a-b4c1-f2756a2e09b1.png" style="max-width: 100%;"></a>
 </div>
 <h2 tabindex="-1" dir="auto"><a id="user-content-table-of-contents" class="anchor" aria-hidden="true" href="#table-of-contents"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Table of Contents</h2>
 <ul dir="auto">
@@ -197,7 +197,3 @@ I was free to choose a theme and I decided to let a squirrel collect some nuts i
 I digged into the cross-platform graphics interface MLX42. I learned how to deal with textures, images and pixels. Plus, I learned how to use hooks, structs and random numbers. I learned how to implement error management and think about the edge cases. I improved my understanding of the Makefile and adopted the habit of testing my code after every change the hard way. Finally, I deepened my understanding of the heap and the stack. I learned to avoid heap allocation when possible.
 All in all, I really enjoyed this project because of its concrete output and liked it the most of all the 42 projects so far.</p>
 </article>
-
-
-
-
