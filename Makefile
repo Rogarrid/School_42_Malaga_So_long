@@ -6,13 +6,11 @@
 #    By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 12:15:50 by rocio             #+#    #+#              #
-#    Updated: 2023/03/23 10:35:53 by rogarrid         ###   ########.fr        #
+#    Updated: 2023/03/23 11:17:31 by rogarrid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = so_long
-
-BONUS = so_long_bonus
 
 CC		= gcc
 
@@ -24,13 +22,14 @@ RM		= rm -f
 
 MAKE_MLX = cd ./MLX42/ && make
 
-SRC = ./src/main.c ./src/ft_read_map.c ./src/ft_check_map.c ./src/ft_error.c ./src/ft_create_map_2d.c \
-		./src/ft_check_map_2d.c ./libs/libft/ft_split.c ./libs/libft/ft_strlen.c ./src/ft_check_way.c \
-		./src/ft_image_map.c ./src/ft_key_hook.c ./src/ft_move_to.c ./libs/libft/ft_bzero.c ./libs/libft/ft_memset.c\
-		./src/ft_print_alert.c ./src/ft_elements.c ./libs/printf/ft_printf.c ./libs/printf/ft_conver_base_hexa.c \
+SRC =  ./libs/libft/ft_split.c ./libs/libft/ft_strlen.c ./libs/libft/ft_bzero.c ./libs/libft/ft_memset.c\
+		./libs/printf/ft_printf.c ./libs/printf/ft_conver_base_hexa.c \
 		./libs/printf/ft_filter_conver.c ./libs/printf/ft_lowercase_hex.c ./libs/printf/ft_putchar_length.c \
 		./libs/printf/ft_putcharporcent_length.c ./libs/printf/ft_puthex_length.c ./libs/printf/ft_putnbr_length.c \
 		./libs/printf/ft_putnbr_unsig_length.c ./libs/printf/ft_strchr_length.c ./libs/printf/ft_uppercase_hex.c \
+		./src/main.c ./src/ft_read_map.c ./src/ft_check_map.c ./src/ft_error.c ./src/ft_create_map_2d.c \
+		./src/ft_check_map_2d.c ./src/ft_check_way.c ./src/ft_image_map.c ./src/ft_key_hook.c ./src/ft_move_to.c \
+		./src/ft_print_alert.c ./src/ft_elements.c \
 
 OBJS = ${SRC:%.c=%.o}
 
