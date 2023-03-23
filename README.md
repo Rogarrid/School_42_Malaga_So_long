@@ -31,10 +31,13 @@ Se tiene libertad para elegir un tema. En mi caso decidí ambientarlo en la edad
 <li>Si se encuentra alguna configuración incorrecta de cualquier tipo en el archivo, el programa debe salir de forma limpia y devolver <code>Error\</code> seguido de un mensaje de error explícito de su elección.</li>
 </ul>
 <h2 tabindex="-1" dir="auto"><a id="user-content-result" class="anchor" aria-hidden="true" href="#result"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>Resultado</h2>
-<p dir="auto">Resultado final del proyecto::
-<animated-image data-catalyst=""><a target="_blank" rel="noopener noreferrer nofollow" href="https://user-images.githubusercontent.com/111855553/227198045-aebe2f14-4504-4c11-88dd-b723ef49c74a.mov" data-target="animated-image.originalLink"><img src="https://user-images.githubusercontent.com/111855553/227198045-aebe2f14-4504-4c11-88dd-b723ef49c74a.mov" alt="Game" style="max-width: 100%; display: inline-block;" data-target="animated-image.originalImage">
+https://user-images.githubusercontent.com/111855553/227198664-ead380bc-305f-49f9-a473-81f6e849995c.mov
 <h2 tabindex="-1" dir="auto"><a id="user-content-what-i-learned" class="anchor" aria-hidden="true" href="#what-i-learned"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path></svg></a>What I learned</h2>
 <p dir="auto">I learned how to manipulate images using GIMP.
 I digged into the cross-platform graphics interface MLX42. I learned how to deal with textures, images and pixels. Plus, I learned how to use hooks, structs and random numbers. I learned how to implement error management and think about the edge cases. I improved my understanding of the Makefile and adopted the habit of testing my code after every change the hard way. Finally, I deepened my understanding of the heap and the stack. I learned to avoid heap allocation when possible.
 All in all, I really enjoyed this project because of its concrete output and liked it the most of all the 42 projects so far.</p>
+
+
+
+
 
