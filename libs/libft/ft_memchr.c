@@ -3,32 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:11 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 20:59:01 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/27 09:37:55 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 17:52:39 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Search the first number bytes poins out for the string pointer, searching the 
+//character given. So much the string as character are interpreted as unsigned 
+//char. Return an pointer where it is located the character.
 #include "libft.h"
 
-/* The memchr() function locates the first occurrence of c (converted to an
-unsigned char) in string s. */
-
-void	*ft_memchr(const void *s, int c, size_t n)
+void	*ft_memchr(const void *string, int character, size_t number_bytes)
 {
-	size_t	i;
+	size_t	counter;
 
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	while (i < n)
+	counter = 0;
+	while (counter < number_bytes)
 	{
-		if ((((unsigned char *)s)[i]) == (unsigned char)c)
-		{
-			return ((void *)s + i);
-		}
-		i++;
+		if (*((unsigned char *)string + counter) == (unsigned char) character)
+			return ((void *) string + counter);
+		counter++;
 	}
 	return (NULL);
 }

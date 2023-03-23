@@ -3,15 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/09 11:21:09 by rocio             #+#    #+#             */
-/*   Updated: 2023/03/13 12:35:41 by rogarrid         ###   ########.fr       */
+/*   Created: 2023/01/25 11:21:09 by rocio             #+#    #+#             */
+/*   Updated: 2023/03/21 12:26:18 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+//Chequea tres parámetros:
+// mapa compuesto por 0, 1, E, P, C y /n
+//número de veces que aparece C, E, P
+//mapa sea rectángulo, que todas las filas sean igual de largas
 void	ft_check_map(char *str_map, t_game *game)
 {
 	ft_validate_characters(str_map);
@@ -37,26 +41,26 @@ void	ft_validate_characters(char *str_map)
 void	ft_amount_of_characters(char *str_map, t_game *game)
 {
 	int	i;
-	int	p_count;
-	int	collectible_count;
-	int	e_count;
+	int	position_player_count;
+	int	collec_count;
+	int	exit_counter;
 
 	i = 0;
-	p_count = 0;
-	collectible_count = 0;
-	e_count = 0;
+	position_player_count = 0;
+	collec_count = 0;
+	exit_counter = 0;
 	while (str_map[i++])
 	{
 		if (str_map[i] == 'C')
-			collectible_count++;
+			collec_count++;
 		if (str_map[i] == 'E')
-			e_count++;
+			exit_counter++;
 		if (str_map[i] == 'P')
-			p_count++;
+			position_player_count++;
 	}
-	if (p_count != 1 || e_count != 1 || collectible_count < 1)
+	if (position_player_count != 1 || exit_counter != 1 || collec_count < 1)
 		ft_print_error("El mapa tiene al menos 1 carácter erróneo\n");
-	game->collectible_count = collectible_count;
+	game->collectible_count = collec_count;
 }
 
 void	ft_validate_line_length(char *string_map)

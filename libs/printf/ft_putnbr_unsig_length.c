@@ -1,30 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printstr.c                                      :+:      :+:    :+:   */
+/*   ft_putnbr_unsig_length.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:08:40 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/10 16:58:56 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/24 12:53:10 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/26 09:06:04 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Print a unsigned integral number and decimal number in base 10,
+//count the lenght.
 #include "ft_printf.h"
 
-int	ft_printstr(char *s)
+void	ft_putnbr_unsig_length(unsigned int number, size_t *length)
 {
-	int	i;
-	int	len;
-
-	len = 0;
-	if (!s)
-		s = "(null)";
-	i = 0;
-	while (s[i] != '\0')
-	{
-		len += ft_printchar(s[i]);
-		i++;
-	}
-	return (len);
+	if (number > 9)
+		ft_putnbr_length(number / 10, length);
+	ft_putchar_length('0' + number % 10, length);
 }

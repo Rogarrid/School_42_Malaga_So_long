@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:57:49 by lfrank            #+#    #+#             */
-/*   Updated: 2022/10/31 12:11:36 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/27 10:35:42 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 17:42:16 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//checks whether a character is a alphanumeric character or not.
 #include "libft.h"
 
-/* The isalnum() function tests for any character for which isalpha(3) or
-isdigit(3) is true. */
-
-int	ft_isalnum(int c)
+int	ft_isalnums(int character)
 {
-	if (ft_isalpha(c) || ft_isdigit(c))
+	if ((character >= 'A' && character <= 'Z')
+		|| (character >= 'a' && character <= 'z')
+		|| (character >= 0 && character <= 9))
 		return (1);
 	else
 		return (0);

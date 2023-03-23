@@ -3,45 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:52 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 21:11:46 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/27 16:39:01 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:31:30 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Find the little string in the big string inside of the length given. Return 
+// Null if the little string isn't in the big string, return the big string if 
+// little string is empty or return the string to search for if it is in the 
+// big string.
 #include "libft.h"
 
-/* The strnstr() function locates the first occurrence of the null-terminated 
-string needle in the string haystack, where not more than len characters 
-are searched.  
-If needle is an empty string, haystack is returned; if needle occurs
-nowhere in haystack, NULL is returned; otherwise a pointer to the first
-character of the first occurrence of needle is returned. */
-
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strnstr(const char *str_big, const char *str_little, size_t length)
 {
-	unsigned int	i;
-	unsigned int	j;
+	size_t	counter_string_big;
+	size_t	counter_string_little;
+	size_t	length_string_little;
 
-	i = 0;
-	j = 0;
-	if (haystack == NULL || needle == NULL)
-		return (NULL);
-	if (needle[j] == '\0' || needle == NULL)
-		return ((char *)haystack);
-	if (len == 0)
-		return (NULL);
-	while (haystack[i] != '\0' && i < len)
+	counter_string_big = 0;
+	counter_string_little = 0;
+	length_string_little = ft_strlen(string_little);
+	if (length_string_little == 0)
+		return ((char *) string_big);
+	while (counter_string_big < length)
 	{
-		while (needle[j] == haystack[i + j] && ((i + j) < len))
+		while (string_little[counter_string_little]
+			== string_big[counter_string_big])
 		{
-			if (needle[j + 1] == '\0')
-				return ((char *)&haystack[i]);
-			j++;
+			counter_string_little++;
 		}
-		j = 0;
-		i++;
+		if (string_little[counter_string_little] == '\0')
+			return ((char *)string_little);
+		counter_string_big++;
 	}
 	return (NULL);
 }

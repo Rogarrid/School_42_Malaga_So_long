@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check_map_2d.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/10 10:00:22 by rocio             #+#    #+#             */
-/*   Updated: 2023/03/13 12:32:12 by rogarrid         ###   ########.fr       */
+/*   Updated: 2023/03/21 12:31:19 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ int	ft_counter_rows(char **map_2d)
 	return (counter);
 }
 
+//Contabilizar filas y columnas.
+//Chequea que el mapa esté rodeado de muralla.
 void	ft_check_map_2d(t_game *game)
 {
 	int	x;

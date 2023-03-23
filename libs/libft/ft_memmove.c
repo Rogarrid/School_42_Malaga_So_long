@@ -3,32 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:22 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 21:19:33 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:18:41 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:14:15 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Copies the byte length of the source pointer in the destination pointer.
+//It can superposition.
 #include "libft.h"
 
-/* The memmove() function copies len bytes from string src to string dst.
-The two strings may overlap; the copy is always done in a non-destructive
-manner. */
-
-void	*ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *destination, const void *source, size_t length)
 {
-	if (dst == NULL || src == NULL)
-		return (0);
-	if (dst <= src)
-		ft_memcpy(dst, src, len);
-	else
+	size_t	position;
+
+	position = 0;
+	if (destination == source || !length)
+		return (destination);
+	if (destination > source)
 	{
-		while (len > 0)
+		while (length > 0)
 		{
-			((char *)dst)[len - 1] = ((char *)src)[len - 1];
-			len--;
+			*((char *) destination + length - 1)
+				= *((char *) source + length - 1);
+			length--;
 		}
 	}
-	return (dst);
+	else
+	{
+		while (position < length)
+		{
+			*((char *) destination + position) = *((char *) source + position);
+			position++;
+		}
+	}
+	return (destination);
 }

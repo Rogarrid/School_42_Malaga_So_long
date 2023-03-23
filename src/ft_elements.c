@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_elements.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 13:26:57 by rocio             #+#    #+#             */
-/*   Updated: 2023/03/13 11:23:48 by rogarrid         ###   ########.fr       */
+/*   Created: 2023/03/05 13:26:57 by rocio             #+#    #+#             */
+/*   Updated: 2023/03/21 13:38:17 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+//Se cargar todas las imagenes con textura y se guardan en estructura del
+//juego.
 void	ft_save_elements(t_game *game)
 {
 	game->items.wall = ft_add_element(game->mlx, "./items/wall.xpm42");
@@ -24,7 +26,7 @@ void	ft_save_elements(t_game *game)
 		game->items.exit = ft_add_element(game->mlx, "./items/ex-clos.xpm42");
 }
 
-/* frees the memory allocated to previously used elements */
+/* frees the memory allocated to preyviously used elements */
 void	ft_clean_old_elements(t_game *game)
 {
 	mlx_delete_image(game->mlx, game->old_elements.wall);

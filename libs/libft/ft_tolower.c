@@ -3,23 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_tolower.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:59:02 by lfrank            #+#    #+#             */
-/*   Updated: 2022/10/31 12:07:38 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:20:40 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:33:31 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Convert given character to lowercase.
 #include "libft.h"
 
-/* The tolower() function converts an upper-case letter to the corresponding
-lower-case letter. */
-
-int	ft_tolower(int c)
+int	ft_tolower(int character)
 {
-	if (c >= 'A' && c <= 'Z')
-	{
-		c += 32;
-	}
-	return (c);
+	if (character >= 'A' && character <= 'Z')
+		return (character + 32);
+	else
+		return (character);
 }

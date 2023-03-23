@@ -3,44 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:41 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 21:09:05 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/27 10:58:45 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:22:49 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Concatenate the destination pointer whith the source pointer. Ends the
+// concatenation in Null. Return the total size of the two string concatenated.
 #include "libft.h"
 
-/* The strlcat() function copy and concatenate strings with
-the same input parameters and output result as snprintf(3).
-It appends string src to the end of dst.  It will append at most
-dstsize - strlen(dst) - 1 characters.  It will then NUL-terminate, unless
-dstsize is 0 or the original dst string was longer than dstsize (in practice 
-this should not happen as it means that either dstsize is incorrect
-or that dst is not a proper string). */
-
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcat(char *destination, const char *source, size_t size)
 {
-	unsigned int	i;
-	unsigned int	j;
-	unsigned int	dlen;
-	unsigned int	slen;
+	size_t	size_destination;
+	size_t	position_source;
 
-	i = 0;
-	if (dst == NULL || src == NULL)
+	if (!source || !destination)
 		return (0);
-	dlen = ft_strlen(dst);
-	slen = ft_strlen(src);
-	j = dlen;
-	if (dstsize == 0 || dstsize <= dlen)
-		return (slen + dstsize);
-	while (src[i] != '\0' && i < dstsize - dlen - 1)
+	size_destination = 0;
+	while (destination[size_destination] != '\0')
+		size_destination++;
+	position_source = 0;
+	while (source[position_source] && position_source < size)
 	{
-		dst[j] = src[i];
-		i++;
-		j++;
+		destination[size_destination] = source[position_source];
+		position_source++;
+		size_destination++;
 	}
-	dst[j] = '\0';
-	return (dlen + slen);
+	if (size)
+		size_destination++;
+	destination[size_destination] = '\0';
+	return (size_destination);
 }

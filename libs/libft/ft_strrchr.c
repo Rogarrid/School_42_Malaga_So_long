@@ -3,30 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:55 by lfrank            #+#    #+#             */
-/*   Updated: 2022/10/31 12:50:11 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:20:25 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:32:52 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Search the character given in the string and return pointer where the 
+//character appeare for last time. If it isn't find return Null. 
 #include "libft.h"
 
-/* The strrchr() function searches for the last occurrence of the character c
-in the string pointed to, by the argument str. */
-
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *string, int character)
 {
-	int	i;
+	size_t	size_string;
 
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	while (i >= 0)
+	size_string = ft_strlen(string);
+	while (size_string > 0)
 	{
-		if (s[i] == (char)c)
-			return ((char *)s + i);
-		i--;
+		if (string[size_string] == character)
+			return ((char *)string + size_string);
+		size_string--;
 	}
 	return (NULL);
 }

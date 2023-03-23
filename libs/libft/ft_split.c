@@ -3,108 +3,78 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:31 by lfrank            #+#    #+#             */
-/*   Updated: 2023/01/16 12:05:58 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/03 10:23:35 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/05 17:22:00 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Reserves an array of the final str that results from separating
+//"str" into a substr using the given "cha" as the delimiter.
+//The array ends with a null pointer.
+
 #include "libft.h"
 
-/* The split() function allocates (with malloc(3)) and returns an array of 
-strings obtained by splitting ’s’ using the character ’c’ as a delimiter. 
-The array must end with a NULL pointer. */
-
-static void	ft_free_all(char **str_tab, int i)
+static int	ft_count_word(const char *str, char cha)
 {
-	i--;
-	while (i >= 0)
-	{
-		free(str_tab[i]);
-		i--;
-	}
-	free(str_tab);
-}
+	int	length_sub_str;
+	int	flag;
 
-static int	ft_count_strings(char const *s, char c)
-{
-	int	count;
-	int	seen_c;
-	int	i;
-
-	count = 0;
-	seen_c = 1;
-	i = 0;
-	while (s[i] != '\0')
+	length_sub_str = 0;
+	flag = 0;
+	while (*str)
 	{
-		if (s[i] != c && seen_c == 1)
+		if (*str != cha && flag == 0)
 		{
-			count++;
-			seen_c = 0;
+			flag = 1;
+			length_sub_str++;
 		}
-		else if (s[i] == c)
-			seen_c = 1;
-		i++;
+		else if (*str == cha)
+			flag = 0;
+		str++;
 	}
-	return (count);
+	return (length_sub_str);
 }
 
-static char	*ft_set_one_substring(int *start, char const *s, char c)
+static char	*ft_word_dup(const char *str, int start, int finish)
 {
-	char	*substr;
-	int		end;
-	int		j;
+	char	*sub_string;
+	int		counter_sub_str;
 
-	j = 0;
-	end = *start;
-	while (s[end] != c && s[end] != '\0')
-		end++;
-	substr = (char *)malloc(sizeof(char) * (end - *start + 1));
-	if (substr == NULL)
+	sub_string = malloc((finish - start + 1) * sizeof(char));
+	counter_sub_str = 0;
+	while (start < finish)
+		sub_string[counter_sub_str++] = str[start++];
+	sub_string[counter_sub_str] = '\0';
+	return (sub_string);
+}
+
+char	**ft_split(char const *str, char cha)
+{
+	size_t	counter_str;
+	size_t	counter_sub_str;
+	int		flag;
+	char	**split;
+
+	split = malloc((ft_count_word(str, cha) + 1) * sizeof(char *));
+	if (!str || !split)
 		return (NULL);
-	while (*start < end)
+	counter_str = 0;
+	counter_sub_str = 0;
+	flag = -1;
+	while (counter_str <= ft_strlen(str))
 	{
-		substr[j] = s[*start];
-		j++;
-		(*start)++;
-	}
-	substr[j] = '\0';
-	return (substr);
-}
-
-static char	**ft_set_substrings(char const *s, char c, char **str_tab)
-{
-	int	start;
-	int	i;
-
-	start = 0;
-	i = 0;
-	while (s[start] != '\0')
-	{
-		if (s[start] != c)
+		if (str[counter_str] != cha && flag < 0)
+			flag = counter_str;
+		else if ((str[counter_str] == cha || counter_str == ft_strlen(str))
+			&& flag >= 0)
 		{
-			str_tab[i] = ft_set_one_substring(&start, s, c);
-			if (str_tab[i] == NULL)
-			{
-				ft_free_all(str_tab, i);
-				return (NULL);
-			}
-			i++;
+			split[counter_sub_str++] = ft_word_dup(str, flag, counter_str);
+			flag = -1;
 		}
-		else
-			start++;
+		counter_str++;
 	}
-	str_tab[i] = 0;
-	return (str_tab);
-}
-
-char	**ft_split(char const *s, char c)
-{
-	char	**str_tab;
-
-	str_tab = malloc(sizeof(char *) * (ft_count_strings(s, c) + 1));
-	if (str_tab == NULL)
-		return (NULL);
-	return (ft_set_substrings(s, c, str_tab));
+	split[counter_sub_str] = 0;
+	return (split);
 }

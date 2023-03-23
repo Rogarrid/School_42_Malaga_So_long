@@ -3,102 +3,64 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:08 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/02 18:45:37 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/03 16:02:15 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/04 11:58:18 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Convert an int in char.
 #include "libft.h"
 
-/* The itoa() function allocates (with malloc(3)) and returns a string 
-representing the integer received as an argument. 
-It returns the string representing the integer.*/
-
-static int	intlen(int nb)
+size_t	ft_size_int(int number)
 {
-	int	size;
+	size_t	size;
 
-	size = 1;
-	if (nb == INT_MIN)
-	{
-		nb = INT_MAX;
-		size++;
-	}
-	if (nb < 0)
-	{
-		nb = -nb;
-		size++;
-	}
-	while (nb > 9)
-	{
-		nb /= 10;
-		size++;
-	}
+	size = 0;
+	if (number > 0)
+		size = 0;
+	else
+		size = 1;
 	return (size);
 }
 
-static char	*ft_strrev(char *str, int startpos)
+long	ft_sign_number(int number)
 {
-	int		i;
-	int		len;
-	char	tmp;
+	long	number_sign;
 
-	i = startpos;
-	len = ft_strlen(str) - 1;
-	while (len > i)
-	{
-		tmp = str[i];
-		str[i] = str[len];
-		str[len] = tmp;
-		i++;
-		len--;
-	}
-	return (str);
+	if (number > 0)
+		number_sign = number;
+	else
+		number_sign = -number;
+	return (number_sign);
 }
 
-static void	ft_getdigits(int nb, int i, char *str, int int_min_edge)
+char	*ft_itoa(int number)
 {
-	if (nb < 0)
-	{
-		if (nb == INT_MIN)
-		{
-			nb = INT_MAX;
-			int_min_edge = 1;
-		}
-		else
-			nb = -nb;
-		str[i] = '-';
-		i++;
-	}
-	while (nb > 9)
-	{
-		if (int_min_edge == 1 && i == 1)
-			str[i] = (nb % 10) + 48 + int_min_edge;
-		else
-			str[i] = (nb % 10) + 48;
-		nb /= 10;
-		i++;
-	}
-	str[i] = nb + 48;
-	str[i + 1] = '\0';
-}
+	char	*string;
+	size_t	size;
+	long	number_sign;
 
-char	*ft_itoa(int n)
-{
-	char	*str;
-	int		len;
-	int		neg;
-
-	len = intlen(n);
-	str = (char *)malloc(len + 1);
-	neg = 0;
-	if (n < 0)
-		neg = 1;
-	if (str == NULL)
+	size = ft_size_int(number);
+	number_sign = ft_sign_number(number);
+	while (number)
+	{
+		number = number / 10;
+		size++;
+	}
+	string = (char *)malloc(size + 1 * sizeof(char));
+	if (!string)
 		return (NULL);
-	ft_getdigits(n, 0, str, 0);
-	ft_strrev(str, neg);
-	return (str);
+	string[size--] = '\0';
+	while (number_sign > 0)
+	{
+		string[size--] = number_sign % 10 + '0';
+		number_sign = number_sign / 10;
+	}
+	if (size == 0 && string[1] == '\0')
+		string[size] = '0';
+	else if (size == 0 && string[1] != '\0')
+		string[size] = '-';
+	return (string);
 }

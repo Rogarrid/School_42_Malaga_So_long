@@ -3,23 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_toupper.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:59:04 by lfrank            #+#    #+#             */
-/*   Updated: 2022/10/31 12:07:36 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:21:00 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:34:35 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Convert given character to uppercase.
 #include "libft.h"
 
-/* The toupper() function converts a lower-case letter to the corresponding
-upper-case letter.  */
-
-int	ft_toupper(int c)
+int	ft_toupper(int character)
 {
-	if (c >= 'a' && c <= 'z')
-	{
-		c -= 32;
-	}
-	return (c);
+	if (character >= 'a' && character <= 'z')
+		return (character - 32);
+	else
+		return (character);
 }

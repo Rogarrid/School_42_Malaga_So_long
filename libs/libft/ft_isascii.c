@@ -3,20 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:57:58 by lfrank            #+#    #+#             */
-/*   Updated: 2022/10/31 12:07:23 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/27 10:36:08 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 17:48:53 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//checks whether a argument is a ascii character(0-127) or not.
 #include "libft.h"
 
-/* The isascii() function tests for an ASCII character. */
-
-int	ft_isascii(int c)
+int	ft_isascii(int character)
 {
-	if (c >= 0 && c <= 127)
+	if (character >= 0 && character <= 127)
 		return (1);
 	else
 		return (0);

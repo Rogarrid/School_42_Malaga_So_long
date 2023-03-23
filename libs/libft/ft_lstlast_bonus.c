@@ -1,27 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 18:20:41 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 18:20:44 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/10 17:30:35 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/10 18:27:43 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Return last nodo the list.
 #include "libft.h"
 
-/* The lstiter() function iterates the list ’lst’ and 
-applies the function ’f’ on the content of each node. */
-
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+t_list	*ft_lstlast_bonus(t_list *list)
 {
-	if (lst == NULL || f == NULL)
+	t_list	last_nodo_list;
+
+	last_nodo_list = list;
+	if (!list)
 		return ;
-	while (lst != NULL)
-	{
-		f(lst->content);
-		lst = lst->next;
-	}
+	while (last_nodo_list != NULL)
+		last_nodo_list = last_nodo_list -> next;
+	return (last_nodo_list);
 }

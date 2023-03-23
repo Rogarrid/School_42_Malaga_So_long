@@ -3,30 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:39 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/02 17:21:15 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/29 12:01:03 by rocio             #+#    #+#             */
+/*   Updated: 2022/09/30 13:13:07 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Create new string with the concatenation of the string_1 and string_2.
 #include "libft.h"
 
-/* The strjoin() function allocates (with malloc(3)) and returns a new string, 
-which is the result of the concatenation of ’s1’ and ’s2’. */
-
-char	*ft_strjoin(char const *s1, char const *s2)
+char    *ft_strjoin(char const *string_1, char const *string_2)
 {
-	char	*str;
-	size_t	len;
+    char    *new_string;
+    size_t  lenght_new_string;
+    int     counter_string_1;
+    int     counter_string_2;
 
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	len = ft_strlen(s1) + ft_strlen(s2);
-	str = malloc(sizeof(char) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	ft_strlcpy(str, s1, len + 1);
-	ft_strlcat(str, s2, len + 1);
-	return (str);
+    lenght_new_string = ft_strlen (string_1) + ft_strlen (string_2);
+    new_string = (char *)ft_calloc(lenght_new_string, sizeof(char));
+    counter_string_1 = 0;
+    while (string_1[counter_string_1] != '\0')
+    {
+        new_string[counter_string_1] = string_1[counter_string_1];
+        counter_string_1++;
+    }
+    counter_string_2 = 0;
+    while (string_2[counter_string_2] != '\0')
+        new_string[counter_string_1++] = string_2[counter_string_2++];
+    new_string[counter_string_1++] = '\0';
+    if (!string_1 || !string_2 || !new_string)
+        return (NULL);
+    return (new_string);
 }

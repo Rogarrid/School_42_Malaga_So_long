@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalpha.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:57:52 by lfrank            #+#    #+#             */
-/*   Updated: 2022/10/31 12:07:22 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/22 10:10:14 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 17:47:48 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//checks whether a character is a alphabetic character or not.
 #include "libft.h"
 
-/* The isalpha() function checks if the passed character is alphabetic. */
-
-int	ft_isalpha(int c)
+int	ft_isalpha(int character)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
+	if ((character < 'A') || (character > 'Z' && character < 'a')
+		|| (character > 'z'))
 		return (0);
+	else
+		return (1);
 }

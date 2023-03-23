@@ -3,53 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:57:36 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 21:06:30 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:27:45 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 17:17:28 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Convert an string in an integer.
 #include "libft.h"
-
-/* The atoi() function converts ASCII string to integer */
-
-static int	ft_isspace(char c)
-{
-	if (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r'
-		|| c == ' ')
-		return (1);
-	else
-	{
-		return (0);
-	}
-}
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	sign;
-	int	result;
+	long	count;
+	long	convert_int;
+	int		is_negative;
 
-	i = 0;
-	sign = 1;
-	result = 0;
-	if (str == NULL)
-		return (0);
-	while (ft_isspace(str[i]) == 1)
-		i++;
-	if (str[i] == '-')
+	count = 0;
+	convert_int = 0;
+	is_negative = 0;
+	while (str[count] != '\0' && (str[count] == ' ' || str[count] == '\t'
+			|| str[count] == '\n' || str[count] == '\r'
+			|| str[count] == '\v' || str[count] == '\f' || str[count] == '+'))
+		count++;
+	if (str[count] != '\0' && str[count] == '-')
 	{
-		sign = -1;
-		i++;
+		is_negative = 1;
+		count++;
 	}
-	else if (str[i] == '+')
-		i++;
-	while (str[i] != '\0' && str[i] >= '0' && str[i] <= '9')
+	while (str[count] != '\0' && str[count] >= '0' && str[count] <= '9')
 	{
-		result *= 10;
-		result += str[i] - '0';
-		i++;
+		convert_int = (convert_int * 10) + (str[count] - '0');
+		count++;
 	}
-	return (result * sign);
+	if (is_negative == 1)
+		return (-convert_int);
+	return (convert_int);
 }

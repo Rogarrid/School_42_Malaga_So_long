@@ -3,33 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 13:14:15 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/01 14:28:17 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/04 11:53:57 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/05 09:08:54 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//To each character for the "string" the function is applied, giving as
+//parameter the index of each character inside of the "string" and the
+//own character. It's about creating a new "string" with the result of the
+//successive use the "function".
 #include "libft.h"
 
-/* The strmapi() function applies the function ’f’ to each character of the 
-string ’s’, and passing its index as first argument to create 
-a new string (with malloc(3)) resulting from successive applications of ’f’. 
-It returns the result of the applications of f on s. */
-
-char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *string, char (*function)(unsigned int, char))
 {
-	int		i;
-	char	*memoire;
+	char	*new_string;
+	size_t	counter;
+	size_t	size;
 
-	i = 0;
-	memoire = ft_calloc(ft_strlen(s) + 1, sizeof(char));
-	if (memoire == NULL)
+	size = ft_strlen(string);
+	new_string = (char *)ft_calloc(size + 1, sizeof(char));
+	if (!new_string || !string || !function)
 		return (NULL);
-	while (s[i] != '\0')
+	counter = 0;
+	while (counter < size)
 	{
-		memoire[i] = f(i, s[i]);
-		i++;
+		new_string[counter] = (*function)(counter, string[counter]);
+		counter++;
 	}
-	return (memoire);
+	new_string[counter] = '\0';
+	return (new_string);
 }

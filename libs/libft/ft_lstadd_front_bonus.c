@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 18:21:18 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/02 18:27:13 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/10 16:51:25 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/10 18:00:16 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Add the nodo "new" the beginning the "list".
 #include "libft.h"
 
-/* The lstsize() function counts the number of nodes in a list. */
-
-int	ft_lstsize(t_list *lst)
+void	ft_lstadd_front_bonus(t_list **list, t_list *new);
 {
-	int	size;
-
-	size = 0;
-	while (lst != NULL)
+	if (!new)
+		return ;
+	if (!list)
 	{
-		lst = lst->next;
-		size++;
+		*list = new;
+		return ;
 	}
-	return (size);
+	new -> next = *list;
+	*list = new;
 }

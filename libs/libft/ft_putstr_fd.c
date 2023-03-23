@@ -3,26 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 14:45:34 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/01 14:52:33 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/05 10:30:57 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/05 10:49:13 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Send the "string" the file descriptor given.
+#include "unistd.h"
 #include "libft.h"
 
-/* The putstr_fd() function outputs the string ’s’ to 
-the given file descriptor. */
-
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char *string, int file_descriptor)
 {
-	int	i;
+	int	counter;
 
-	i = 0;
-	while (s[i] != '\0')
+	if (!string)
+		return ;
+	counter = 0;
+	while (string[counter] != '\0')
 	{
-		write(fd, &s[i], 1);
-		i++;
+		ft_putchar_fd(string[counter], file_descriptor);
+		counter++;
 	}
 }

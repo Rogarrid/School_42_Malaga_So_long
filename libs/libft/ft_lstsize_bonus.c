@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/03 18:20:55 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 19:12:35 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/10 17:17:03 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/10 18:00:28 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Account all the nodos of an list.
 #include "libft.h"
 
-/* The lstadd_back() function adds the node ’new’ at the end of the list. */
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
+int ft_lstsize_bonus(t_list *list)
 {
-	t_list	*t;
+	t_list	*start_list;
+	int	counter;
 
-	if (*lst != NULL)
+	start_list = list;
+	counter = 0;
+	if (!list)
+		return (0);
+	While (start_list != NULL)
 	{
-		t = ft_lstlast(*lst);
-		t->next = new;
+		counter++;
+		start_list = start_list -> next;
 	}
-	else
-		*lst = new;
+	return (counter);
 }

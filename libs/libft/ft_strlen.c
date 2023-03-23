@@ -3,29 +3,25 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:47 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 19:54:54 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:20:06 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:25:44 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//calculates the length of a given string.
 #include "libft.h"
 
-/* The strlen() function computes the length of the string s.  The strnlen()
-function attempts to compute the length of s, but never scans beyond the
-first maxlen bytes of s. */
-
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *string)
 {
-	size_t	i;
+	size_t	length;
 
-	i = 0;
-	if (s == NULL)
-		return (0);
-	while (s[i] != '\0')
+	length = 0;
+	while (*string != '\0')
 	{
-		i++;
+		length++;
+		string++;
 	}
-	return (i);
+	return (length);
 }

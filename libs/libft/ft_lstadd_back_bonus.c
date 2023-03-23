@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 18:27:47 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 19:12:18 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/10 17:37:08 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/10 18:29:54 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Add the nodo "new" the beginning the "list".
 #include "libft.h"
 
-/* The lstlast() function returns the last node of the list. */
-
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstadd_back_bonus(t_list **list, t_list *new)
 {
-	while (lst != NULL)
+	t_list *aux;
+
+	if (!new)
+		return ;
+	if (!*list)
 	{
-		if (lst->next == NULL)
-			return (lst);
-		lst = lst->next;
+		*list = new;
+		return	;
 	}
-	return (lst);
+aux = ft_lstlast_bonus(*list);
+new -> next = *aux;
+*aux = new;
 }

@@ -3,26 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:57:46 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/02 14:59:26 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 15:18:47 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 17:20:56 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Allocates space of storage for an matrix of number items, each of size 
+//bytes of length. Each element is inicilized in zero.
 #include "libft.h"
 
-/* The calloc() function contiguously allocates enough space for count
-objects that are size bytes of memory each and returns a pointer to the
-allocated memory. The allocated memory is filled with bytes of value zero.*/
-
-void	*ft_calloc(size_t count, size_t size)
+void	*ft_calloc(size_t number_items, size_t size)
 {
-	void	*memoire;
+	void	*matrix;
 
-	memoire = (void *)malloc(count * size);
-	if (memoire == NULL)
+	matrix = (void *)malloc(size * number_items);
+	if (!matrix)
 		return (NULL);
-	ft_bzero(memoire, count * size);
-	return (memoire);
+	ft_bzero(matrix, size * number_items);
+	return (matrix);
 }

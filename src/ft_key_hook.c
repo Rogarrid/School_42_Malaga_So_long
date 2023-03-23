@@ -3,20 +3,20 @@
 /*                                                        :::      ::::::::   */
 /*   ft_key_hook.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/16 16:23:31 by rocio             #+#    #+#             */
-/*   Updated: 2023/03/13 10:57:59 by rogarrid         ###   ########.fr       */
+/*   Created: 2023/03/08 16:23:31 by rocio             #+#    #+#             */
+/*   Updated: 2023/03/16 17:44:14 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
-void	ft_key_hook(mlx_key_data_t keydata, void *param)
+void	ft_key_hook(mlx_key_data_t keydata, void *paramater)
 {
 	t_game	*game;
 
-	game = param;
+	game = paramater;
 	if (keydata.action == MLX_PRESS)
 	{
 		if (keydata.key == MLX_KEY_ESCAPE)

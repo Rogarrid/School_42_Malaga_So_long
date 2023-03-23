@@ -3,30 +3,30 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:08:32 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/10 20:12:30 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/26 09:06:43 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/11/02 11:44:44 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-# define B_10 "0123456789"
-# define B_16MIN "0123456789abcdef"
-# define B_16MAJ "0123456789ABCDEF"
-
-# include <stdarg.h>
 # include <unistd.h>
+# include <stdarg.h>
+# include <stdlib.h>
 
-int	ft_printnbr(int n);
-int	ft_printchar(char c);
-int	ft_printstr(char *s);
-int	ft_digitlen(int nb, char c);
-int	ft_printhex(unsigned long nb, int b_is_X);
-int	ft_printf(const char *format, ...);
-int	ft_printpointer(size_t ptr);
-int	ft_printnbr_u(unsigned int nb);
+int		ft_printf(char const *string, ...);
+void	ft_filter_conver(char *string, va_list arguments, size_t *length);
+void	ft_putchar_length(int character, size_t *length);
+void	ft_strchr_length(char *string, size_t *length);
+void	ft_putnbr_length(int number, size_t *length);
+void	ft_putcharporcent_length(size_t *length);
+void	ft_puthex_length(unsigned long long direction, size_t *length);
+void	ft_conver_base_hexa(unsigned long int direction, size_t *length);
+void	ft_lowercase_hex(unsigned int direction, size_t *length);
+void	ft_uppercase_hex(unsigned int direction, size_t *length);
+void	ft_putnbr_unsig_length(unsigned int number, size_t *length);
 
 #endif

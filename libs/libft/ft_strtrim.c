@@ -3,32 +3,27 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:58 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/02 17:17:33 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/03 09:53:39 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/03 10:36:01 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+// Removes the characters in the string "set" from the beginning and end of 
+//string_1.
 #include "libft.h"
 
-/* The strtrim() function allocates (with malloc(3)) and returns a copy
-of ’s1’ with the characters specified in ’set’ removed from the 
-beginning and the end of the string. */
-
-char	*ft_strtrim(char const *s1, char const *set)
+char	*ft_strtrim(char const *string_1, char const *set)
 {
-	int	set_size;
-	int	i;
+	size_t	length_string;
 
-	i = 0;
-	if (s1 == NULL || set == NULL)
+	if (!string_1 || !set)
 		return (NULL);
-	while (s1[i] != '\0' && ft_strchr(set, s1[i]))
-		i++;
-	set_size = ft_strlen(&s1[i]);
-	if (set_size != 0)
-		while (s1[i + set_size - 1] && ft_strchr(set, s1[i + set_size - 1]))
-			set_size--;
-	return (ft_substr(s1, i, set_size));
+	while (*string_1 && ft_strchr(set, *string_1))
+		string_1++;
+	length_string = ft_strlen(string_1);
+	while (length_string && ft_strchr(set, string_1[length_string]))
+		length_string--;
+	return (ft_substr(string_1, 0, length_string + 1));
 }

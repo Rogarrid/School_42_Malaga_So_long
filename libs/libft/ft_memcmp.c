@@ -3,31 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:15 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 21:13:52 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/27 10:34:56 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/05 17:57:13 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Compared the first number bytes (each interpreted as unsigned char) of the
+//memory areas string1 and string2.
 #include "libft.h"
 
-/* The memcmp() function compares byte string s1 against byte string s2.
-Both strings are assumed to be n bytes long. */
-
-int	ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *string1, const void *string2, size_t numb_bytes)
 {
-	unsigned int	i;
+	size_t	counter;
 
-	i = 0;
-	if (n == 0)
-		return (0);
-	if (s1 == NULL || s2 == NULL)
-		return (0);
-	while ((((unsigned char *)s1)[i] == ((unsigned char *)s2)[i]) && (i < n
-			- 1))
+	counter = 0;
+	while (counter < numb_bytes)
 	{
-		i++;
+		if (*((unsigned char *) string1 + counter)
+			!= *((unsigned char *) string2 + counter))
+			return ((*((unsigned char *) string1 + counter))
+				- *((unsigned char *) string2 + counter));
+		counter++;
 	}
-	return (((unsigned char *)s1)[i] - ((unsigned char *)s2)[i]);
+	return (0);
 }

@@ -6,7 +6,7 @@
 #    By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/15 12:15:50 by rocio             #+#    #+#              #
-#    Updated: 2023/03/13 12:43:39 by rogarrid         ###   ########.fr        #
+#    Updated: 2023/03/23 10:35:53 by rogarrid         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,12 @@ RM		= rm -f
 MAKE_MLX = cd ./MLX42/ && make
 
 SRC = ./src/main.c ./src/ft_read_map.c ./src/ft_check_map.c ./src/ft_error.c ./src/ft_create_map_2d.c \
-		./src/ft_check_map_2d.c ./libs/libft/ft_split.c ./libs/printf/ft_printf.c ./libs/printf/ft_printchar.c \
-		./libs/printf/ft_printstr.c ./libs/printf/ft_printnbr.c  ./libs/printf/ft_printhex.c ./libs/printf/ft_digitlen.c \
-		./libs/printf/ft_printpointer.c ./libs/printf/ft_printnbr_u.c ./libs/libft/ft_strlen.c ./src/ft_check_way.c \
-		./src/ft_image_map.c ./src/ft_key_hook.c ./src/ft_move_to.c ./libs/libft/ft_bzero.c \
-		./src/ft_print_alert.c ./src/ft_elements.c
+		./src/ft_check_map_2d.c ./libs/libft/ft_split.c ./libs/libft/ft_strlen.c ./src/ft_check_way.c \
+		./src/ft_image_map.c ./src/ft_key_hook.c ./src/ft_move_to.c ./libs/libft/ft_bzero.c ./libs/libft/ft_memset.c\
+		./src/ft_print_alert.c ./src/ft_elements.c ./libs/printf/ft_printf.c ./libs/printf/ft_conver_base_hexa.c \
+		./libs/printf/ft_filter_conver.c ./libs/printf/ft_lowercase_hex.c ./libs/printf/ft_putchar_length.c \
+		./libs/printf/ft_putcharporcent_length.c ./libs/printf/ft_puthex_length.c ./libs/printf/ft_putnbr_length.c \
+		./libs/printf/ft_putnbr_unsig_length.c ./libs/printf/ft_strchr_length.c ./libs/printf/ft_uppercase_hex.c \
 
 OBJS = ${SRC:%.c=%.o}
 

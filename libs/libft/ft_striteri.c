@@ -3,27 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 14:29:21 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/01 14:44:28 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/04 12:18:31 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/05 09:11:18 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//To each character of the "string", the "function" is applied giving as
+//parameter the index of each character inside the "string" and the direction
+//of own character, that can be modified if was necesary.
 #include "libft.h"
 
-/* The striteri() function applies the function ’f’ on each character of 
-the string passed as argument, passing its index as first argument. 
-Each character is passed by address to ’f’ to be modified if necessary. */
-
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_striteri(char *string, void (*function)(unsigned int, char*))
 {
-	int	i;
+	unsigned int	counter;
 
-	i = 0;
-	while (s[i] != '\0')
+	counter = 0;
+	if (!string || !function)
+		return ;
+	while (string[counter] != '\0')
 	{
-		f(i, &s[i]);
-		i++;
+		(*function)(counter, &string[counter]);
+		counter++;
 	}
 }

@@ -3,37 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/01 14:47:28 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 19:41:55 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/05 11:24:02 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/05 11:30:22 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Send the "number" the file descriptor given.
+#include "unistd.h"
 #include "libft.h"
 
-/* The putnbr_fd() function outputs the integer ’n’ 
-to the given file descriptor. */
-
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr_fd(int number, int file_descriptor)
 {
-	if (n == -2147483648)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putchar_fd('2', fd);
-		ft_putnbr_fd(147483648, fd);
-	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		n = -n;
-		ft_putnbr_fd(n, fd);
-	}
-	else if (n > 9)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putnbr_fd(n % 10, fd);
-	}
-	else
-		ft_putchar_fd(n + 48, fd);
+	char	int_in_char;
+
+	if (!n)
+		return ;
+	int_in_char = ft_itoa(number);
+	ft_putchar_fd(int_in_char, file_descriptor);
 }

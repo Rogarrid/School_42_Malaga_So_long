@@ -3,37 +3,34 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:44 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 21:20:16 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:19:53 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:24:14 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Copies the size limit given from source pointer to the destination pointer. 
+//Ends the string in Null. Return the total size of the newly created string.
 #include "libft.h"
 
-/* The strlcpy() and strlcat() functions copy and concatenate strings with
-the same input parameters and output result as snprintf(3).
-The strlcpy() function copies up to dstsize - 1 characters from the string 
-src to dst, NUL-terminating the result if dstsize is not 0. */
-
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *destination, const char *source, size_t size)
 {
-	unsigned int	i;
-	unsigned int	x;
+	size_t	size_source;
+	size_t	position;
 
-	if (dst == NULL || src == NULL)
+	if (!source || !destination)
 		return (0);
-	x = ft_strlen(src);
-	i = 0;
-	if (dstsize != 0)
+	size_source = 0;
+	while (source[size_source])
+		size_source++;
+	position = 0;
+	while (source[position] && position < size - 1)
 	{
-		while (src[i] != '\0' && i < dstsize - 1)
-		{
-			dst[i] = src[i];
-			i++;
-		}
-		dst[i] = '\0';
+		destination[position] = source[position];
+		position++;
 	}
-	return (x);
+	if (size)
+		destination[position] = '\0';
+	return (size_source);
 }

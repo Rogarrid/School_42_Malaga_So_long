@@ -3,56 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:08:49 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/10 19:28:45 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/20 10:00:53 by rocio             #+#    #+#             */
+/*   Updated: 2022/11/02 11:50:19 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_search_arg(va_list ap, const char format)
+int	ft_printf(char const *string, ...)
 {
-	if (format == 'c')
-		return (ft_printchar(va_arg(ap, int)));
-	if (format == 's')
-		return (ft_printstr(va_arg(ap, char *)));
-	if (format == 'i' || format == 'd')
-		return (ft_printnbr(va_arg(ap, int)));
-	if (format == 'u')
-		return (ft_printnbr_u(va_arg(ap, unsigned int)));
-	if (format == 'x')
-		return (ft_printhex(va_arg(ap, unsigned int), 0));
-	if (format == 'X')
-		return (ft_printhex(va_arg(ap, unsigned int), 1));
-	if (format == 'p')
-		return (ft_printpointer(va_arg(ap, uintptr_t)));
-	if (format == '%')
-		return (ft_printchar('%'));
-	return (0);
-}
+	va_list	arguments;
+	size_t	length;
 
-int	ft_printf(const char *format, ...)
-{
-	va_list	ap;
-	int		i;
-	int		totallen;
-
-	i = 0;
-	totallen = 0;
-	va_start(ap, format);
-	while (format[i])
+	length = 0;
+	va_start (arguments, string);
+	while (*string)
 	{
-		if (format[i] == '%')
+		if (*string && *string != '%')
 		{
-			totallen += ft_search_arg(ap, format[i + 1]);
-			i++;
+			write (1, (char *)string, 1);
+			length++;
 		}
-		else
-			totallen += ft_printchar(format[i]);
-		i++;
+		if (*string == '%')
+		{
+			string++;
+			ft_filter_conver((char *)string, arguments, &length);
+		}
+		string++;
 	}
-	va_end(ap);
-	return (totallen);
+	va_end (arguments);
+	return (length);
 }

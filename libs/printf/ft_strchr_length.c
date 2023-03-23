@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printpointer.c                                  :+:      :+:    :+:   */
+/*   ft_strchr_length.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/10 14:23:29 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/10 20:12:32 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/20 10:18:20 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/26 09:49:51 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Print the string given and count the lenght.
+
 #include "ft_printf.h"
 
-int	ft_printpointer(size_t ptr)
+void	ft_strchr_length(char *string, size_t *length)
 {
-	int	len;
-
-	len = ft_digitlen(0, 'p');
-	len += ft_printstr("0x");
-	len += ft_printhex((unsigned long)ptr, 0);
-	return (len - 1);
+	if (!string)
+		string = "(null)";
+	while (*string)
+	{
+		write (1, (char *)string, 1);
+		string++;
+		(*length)++;
+	}
 }

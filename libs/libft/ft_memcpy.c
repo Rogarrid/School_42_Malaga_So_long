@@ -3,29 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:18 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 22:08:13 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:18:17 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/10/03 09:04:38 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Copies the frist n bytes of the source pointer in the destination pointer.
+//It can't superposition.
 #include "libft.h"
 
-/* The memcpy() function copies n bytes from memory area src to memory 
-area dst. If dst and src overlap, behavior is undefined. */
-
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*memcpy(void *destination, const void *source, size_t number_bytes)
 {
-	size_t	i;
+	size_t	counter;
 
-	i = 0;
-	if (dst == NULL && src == NULL)
-		return (NULL);
-	while (i < n)
+	counter = 0;
+	if (destination == source || !number_bytes)
+		return (destination);
+	while (counter < number_bytes)
 	{
-		((char *)dst)[i] = ((char *)src)[i];
-		i++;
+		*((char *) destination + counter) = *((char *) source + counter);
+		counter++;
 	}
-	return (dst);
+	return (destination);
 }

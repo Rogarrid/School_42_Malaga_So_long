@@ -1,19 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printchar.c                                     :+:      :+:    :+:   */
+/*   ft_putcharporcent_length.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/09 12:08:46 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/10 14:24:35 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/20 13:49:18 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/26 09:44:31 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Print the character "%" given and count the lenght.
+
 #include "ft_printf.h"
 
-int	ft_printchar(char c)
+void	ft_putcharporcent_length(size_t *length)
 {
-	write(1, &c, 1);
-	return (1);
+	int	porcent;
+
+	porcent = '%';
+	write (1, &porcent, 1);
+	(*length)++;
 }

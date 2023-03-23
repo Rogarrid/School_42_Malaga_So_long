@@ -3,35 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rocio <rocio@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:59:00 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/02 17:21:59 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/29 09:26:23 by rocio             #+#    #+#             */
+/*   Updated: 2022/09/30 13:12:56 by rocio            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Create an substring from to source string. "Start" indicates position where
+//begin the substring and "lenght" indicate its lenght.
+
 #include "libft.h"
 
-/* The substr() function allocates (with malloc(3)) and returns 
-a substring from the string ’s’.
-The substring begins at index ’start’ and is of maximum size ’len’. */
-
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char    *ft_substr(char const *string, unsigned int start, size_t lenght)
 {
-	char	*str;
+    char    *sub_string;
+    size_t  counter;
 
-	if (start > ft_strlen(s))
-	{
-		len = 0;
-		start = 0;
-	}
-	if (start + len > ft_strlen(s))
-		len = ft_strlen(s) - start;
-	if (len > ft_strlen(s))
-		len = ft_strlen(s + start);
-	str = (char *)malloc(sizeof(*s) * (len + 1));
-	if (str == NULL)
-		return (NULL);
-	ft_strlcpy(str, (s + start), len + 1);
-	return (str);
+    counter = 0;
+    sub_string = (char *)ft_calloc(lenght, sizeof(char));
+    while (counter < lenght)
+    {
+        sub_string[counter] = string[start];
+        counter++;
+        start++;
+    }
+    if (!string || !sub_string)
+        return (0);
+    return (sub_string);
 }

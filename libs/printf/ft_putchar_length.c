@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
+/*   ft_putchar_length.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/11/02 18:14:08 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/02 18:20:02 by lfrank           ###   ########.fr       */
+/*   Created: 2022/10/20 09:57:18 by rocio             #+#    #+#             */
+/*   Updated: 2022/10/26 09:42:14 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+//Print the character given for the conversion count the lenght.
 
-/* The lstadd_front() function adds the node (element) ’new’ 
-at the beginning of the list. */
+#include "ft_printf.h"
 
-void	ft_lstadd_front(t_list **lst, t_list *new)
+void	ft_putchar_length(int character, size_t *length)
 {
-	if (lst == NULL | new == NULL)
-		return ;
-	new->next = *lst;
-	*lst = new;
+	write (1, &character, 1);
+	(*length)++;
 }

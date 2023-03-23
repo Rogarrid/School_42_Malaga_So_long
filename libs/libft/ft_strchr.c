@@ -3,38 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: lfrank <lfrank@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rogarrid <rogarrid@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/31 11:58:34 by lfrank            #+#    #+#             */
-/*   Updated: 2022/11/03 20:57:47 by lfrank           ###   ########.fr       */
+/*   Created: 2022/09/28 08:19:18 by rogarrid          #+#    #+#             */
+/*   Updated: 2022/09/28 18:17:30 by rogarrid         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Search the character given in the string and return pointer where the 
+//character appeare for frist time. If it isn't find return Null. 
 #include "libft.h"
 
-/* The strchr() function locates the first occurrence of c (converted to a
-char) in the string pointed to by s. 
-The terminating null character is considered to be part of the string; 
-therefore if c is `\0', the functions locate the terminating `\0'. */
-
-char	*ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *string, int character)
 {
-	unsigned int	i;
-
-	i = 0;
-	if (s == NULL)
-		return (NULL);
-	while (s[i] != '\0')
-	{
-		if (s[i] == (unsigned char)c)
-		{
-			return ((char *)&s[i]);
-		}
-		i++;
-	}
-	if ((char)c == s[i])
-	{
-		return ((char *)&s[i]);
-	}
+	while (*string && *string != character)
+		string++;
+	if (*string == character)
+		return ((char *)string);
 	return (NULL);
 }
